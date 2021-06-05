@@ -108,26 +108,16 @@ const shake = keyframes`
     bottom: 32px;
   }
   
-  50% {
+  30% {
     bottom: 40px;
   }
   
-  75% {
+  45% {
     bottom: 28px;
   }
 
-  100% {
+  60% {
     bottom: 32px;
-  }
-`;
-
-const rotate = keyframes`
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
   }
 `;
 
@@ -138,7 +128,8 @@ const SeeMore = styled.div`
   text-align: center;
   position: absolute;
   bottom: 32px;
-  animation: ${shake} 1s linear infinite;
+  animation: ${shake} 1.5s linear infinite;
+  
 `;
 
 const TopBlock = () => (

@@ -6,6 +6,7 @@ import HowToUse from '../../components/HowToUse';
 import Features from '../../components/Features';
 import Slideshow from '../../components/Slideshow';
 import Fee from '../../components/Fee';
+import Footer from '../../components/Footer';
 
 const Body = styled.div`
   font-family: 'Sawarabi Gothic', sans-serif;
@@ -19,6 +20,7 @@ const LandingPage = () => (
     <Features />
     <Slideshow />
     <Fee />
+    <Footer />
   </Body>
 );
 

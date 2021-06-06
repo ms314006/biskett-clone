@@ -4,6 +4,7 @@ import TopBlock from '../../components/TopBlock';
 import Navigation from '../../components/Navigation';
 import HowToUse from '../../components/HowToUse';
 import Features from '../../components/Features';
+import Slideshow from '../../components/Slideshow';
 
 const Body = styled.div`
   font-family: 'Sawarabi Gothic', sans-serif;
@@ -15,6 +16,7 @@ const LandingPage = () => (
     <Navigation />
     <HowToUse />
     <Features />
+    <Slideshow />
   </Body>
 );
 

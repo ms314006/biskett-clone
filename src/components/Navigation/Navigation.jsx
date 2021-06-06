@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
-const Body = styled.nav`
+const Body = styled.div`
   border-bottom: 2px solid #1f3f83;
+  background: #ffffff;
+  width: 100%;
+  position: ${({ fixed }) => fixed ? 'sticky' : 'static'};
+  top: ${({ fixed }) => fixed ? '0px' : 'auto'};
+  z-index: 2;
 `;
 
 const Wrap = styled.div`
@@ -48,8 +53,16 @@ const UseButton = styled.a`
 `;
 
 const Navigation = () => {
+  const [fixed, setFixed] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      setFixed(595 < window.pageYOffset);
+    });
+  }, []);
+
   return (
-    <Body>
+    <Body fixed={fixed}>
       <Wrap>
         <Menu>
           <li>OOOO1</li>

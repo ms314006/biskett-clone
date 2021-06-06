@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import superQ1 from '../../assets/img/superQ1.png';
 
-const Body = styled.nav`
+const Body = styled.div`
   color: #1f3f83;
   background: #edf4ff;
   padding: 161px 0px 100px 0px;
@@ -24,7 +24,7 @@ const Features = styled.div`
   margin-left: -6.731%;
 `;
 
-const Feature = styled.h3`
+const Feature = styled.div`
   max-width: 290px;
   margin-top: 70px;
   margin-left: 6.731%;

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import logoBlueBig from '../../assets/img/logo-blue-big.png';
 
-const Body = styled.nav`
+const Body = styled.div`
   max-width: 1040px;
   margin: -81px auto 0px auto;
   color: #1f3f83;

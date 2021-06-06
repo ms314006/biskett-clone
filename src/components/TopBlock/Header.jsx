@@ -30,7 +30,6 @@ const Menu = styled.ul`
 
 const MenuItem = styled.li`
   float: left;
-
   & > a {
     text-decoration: none;
 

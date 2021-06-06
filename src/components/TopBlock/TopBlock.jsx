@@ -20,7 +20,7 @@ const ContentWrap = styled.div`
   padding: 0px 30px;
   position: absolute;
   top: calc(100vh / 4);
-  left: calc(100vw / 2 - 600px);
+  left: calc(100vw / 2 - 540px);
 `;
 
 const Introduction = styled.div`
@@ -35,7 +35,7 @@ const Introduction = styled.div`
   &::after {
     content: "";
     position: absolute;
-    left: 800px;
+    left: 740px;
     top: -100px;
     width: 440px;
     height: 700px;
@@ -56,12 +56,20 @@ const IntroductionPassage = styled.div`
 const UseButton = styled.a`
   color: #ffffff;
   background: #4184f3;
+  border: 2px #4184f3 solid;
   text-decoration: none;
   padding: 10px 30px;
   font-size: 24px;
+  transition: background 0.5s;
 
   & :visited {
     color: #ffffff;
+  }
+
+  & :hover {
+    color: #4184f3;
+    background: #ffffff;
+    transition: background 0.5s;
   }
 `;
 
@@ -108,7 +116,7 @@ const TopBlock = () => (
         </IntroductionPassage>
         <UseButton
           target="_blank"
-          href="https://github.com/ms314006/kai-group-clone"
+          href="https://github.com/ms314006/biskett-clone"
         >
           GitHub Repositories!
         </UseButton>

@@ -31,7 +31,7 @@ const UseButton = styled.a`
   border: 2px #4184f3 solid;
   text-decoration: none;
   position: absolute;
-  right: 30px;
+  right: 0px;
   padding: 14px 40px;
   font-size: 20px;
   transition: background 0.5s;
@@ -52,9 +52,10 @@ const Navigation = () => {
     <Body>
       <Wrap>
         <Menu>
-          <li>OOOOOOO1</li>
-          <li>OOOOOOO2</li>
-          <li>OOOOOOO3</li>
+          <li>OOOO1</li>
+          <li>OOOO2</li>
+          <li>OOOO3</li>
+          <li>OOOO4</li>
         </Menu>
         <UseButton
           target="_blank"

@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import superQ1 from '../../assets/img/superQ1.png';
+import fadeInObserver from '../../modules/fadeInObserver';
 
 const Body = styled.div`
   color: #1f3f83;
@@ -12,6 +13,8 @@ const Warp = styled.div`
   max-width: 1040px;
   margin: -81px auto 0px auto;
   padding: 0px 30px;
+  position: relative;
+  transition: opacity 1s, top 1s;
 `;
 
 const Title = styled.div`
@@ -46,9 +49,15 @@ const Feature = styled.div`
 `;
 
 const HowToUse = () => {
+  const sectionRef = useRef(null);
+  useEffect(() => {
+    fadeInObserver.registerObservers([
+      sectionRef.current,
+    ]);
+  }, []);
   return (
     <Body>
-      <Warp>
+      <Warp ref={sectionRef} data-triggerpoint={1800}>
         <Title>
           OOOOOOOOOO
         </Title>

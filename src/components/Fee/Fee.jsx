@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import superQ1 from '../../assets/img/superQ1.png';
+import fadeInObserver from '../../modules/fadeInObserver';
 
 const Body = styled.div`
   color: #1f3f83;
@@ -12,6 +12,8 @@ const Warp = styled.div`
   max-width: 1040px;
   margin: -81px auto 0px auto;
   padding: 0px 30px;
+  position: relative;
+  transition: opacity 1s, top 1s;
 `;
 
 const Title = styled.div`
@@ -98,9 +100,15 @@ const FeeItem = styled.div`
 `;
 
 const Fee = () => {
+  const sectionRef = useRef(null);
+  useEffect(() => {
+    fadeInObserver.registerObservers([
+      sectionRef.current,
+    ]);
+  }, []);
   return (
     <Body>
-      <Warp>
+      <Warp ref={sectionRef} data-triggerpoint={2800}>
         <Title>
           OOOOOOOOOO
         </Title>
@@ -113,44 +121,56 @@ const Fee = () => {
           <FeeItem>
             <h3>Personal</h3>
             <div>
-              <p><strong>750</strong>&nbsp;円/月</p>
+              <p>
+                <strong>750</strong>
+                &nbsp;円/月
+              </p>
               <p>（XXXXXXXX）</p>
               <p>XXXXXXXXXXXXXX</p>
             </div>
-            <button>
+            <button type="button">
               XXXXXXXX
             </button>
           </FeeItem>
           <FeeItem>
             <h3>Basic</h3>
             <div>
-              <p><strong>1,800</strong>&nbsp;円/月</p>
+              <p>
+                <strong>1,800</strong>
+                &nbsp;円/月
+              </p>
               <p>（XXXXXXXX）</p>
               <p>XXXXXXXXXXXXXX</p>
             </div>
-            <button>
+            <button type="button">
               XXXXXXXX
             </button>
           </FeeItem>
           <FeeItem>
             <h3>Standard</h3>
             <div>
-              <p><strong>4,900</strong>&nbsp;円/月</p>
+              <p>
+                <strong>4,900</strong>
+                &nbsp;円/月
+              </p>
               <p>（XXXXXXXX）</p>
               <p>XXXXXXXXXXXXXX</p>
             </div>
-            <button>
+            <button type="button">
               XXXXXXXX
             </button>
           </FeeItem>
           <FeeItem>
             <h3>Premium</h3>
             <div>
-              <p><strong>15,000</strong>&nbsp;円/月</p>
+              <p>
+                <strong>15,000</strong>
+                &nbsp;円/月
+              </p>
               <p>（XXXXXXXX）</p>
               <p>XXXXXXXXXXXXXX</p>
             </div>
-            <button>
+            <button type="button">
               XXXXXXXX
             </button>
           </FeeItem>
@@ -161,7 +181,7 @@ const Fee = () => {
               <p>XXXXXXXXXXXXXX</p>
               <p>XXXXXXX。</p>
             </div>
-            <button>
+            <button type="button">
               XXXXXXXX
             </button>
           </FeeItem>

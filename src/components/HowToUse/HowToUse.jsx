@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import logoBlueBig from '../../assets/img/logo-blue-big.png';
+import fadeInObserver from '../../modules/fadeInObserver';
 
 const Body = styled.div`
   max-width: 1040px;
@@ -30,6 +31,8 @@ const Step = styled.div`
   display: flex;
   align-items: center;
   margin-top: 120px;
+  position: relative;
+  transition: opacity 1s, top 1s;
 
   & > img {
     height: 227px;
@@ -72,38 +75,53 @@ const StepIntroduction = styled.div`
 `;
 
 const HowToUse = () => {
+  const step1Ref = useRef(null);
+  const step2Ref = useRef(null);
+  const step3Ref = useRef(null);
+  useEffect(() => {
+    fadeInObserver.registerObservers([
+      step1Ref.current,
+      step2Ref.current,
+      step3Ref.current,
+    ]);
+  }, []);
   return (
     <Body>
       <Title>
-        OOO<span>XXX</span>OOOOOOO
+        OOO
+        <span>XXX</span>
+        OOOOOOO
       </Title>
-      <Step>
-        <img src={logoBlueBig} />
+      <Step ref={step1Ref} data-triggerpoint={500}>
+        <img alt="step1Img" src={logoBlueBig} />
         <StepIntroduction>
           <p>1</p>
           <h3>XXXXXXXXX</h3>
           <div>
-            OOOOOOOO，OOOOOOO，OOOOOOOOOO，OOOOO，OOO，OOOOOOOOOOOOOOO，OOOOOOO，OOOOOOOOOO，OOOOO，OOO，OOOOOOOOOOOOOOO，OOOOOOO
+            OOOOOOOO，OOOOOOO，OOOOOOOOOO，OOOOO，OOO，
+            OOOOOOOOOOOOOOO，OOOOOOO，OOOOOOOOOO，OOOOO，OOO，OOOOOOOOOOOOOOO，OOOOOOO
           </div>
         </StepIntroduction>
       </Step>
-      <Step>
+      <Step ref={step2Ref} data-triggerpoint={850}>
         <StepIntroduction>
           <p>2</p>
           <h3>XXXXXXXXX</h3>
           <div>
-            OOOOOOOO，OOOOOOO，OOOOOOOOOO，OOOOO，OOO，OOOOOOOOOOOOOOO，OOOOOOO，OOOOOOOOOO，OOOOO，OOO，OOOOOOOOOOOOOOO，OOOOOOO
+            OOOOOOOO，OOOOOOO，OOOOOOOOOO，OOOOO，OOO，
+            OOOOOOOOOOOOOOO，OOOOOOO，OOOOOOOOOO，OOOOO，OOO，OOOOOOOOOOOOOOO，OOOOOOO
           </div>
         </StepIntroduction>
-        <img src={logoBlueBig} />
+        <img alt="step2Img" src={logoBlueBig} />
       </Step>
-      <Step>
-        <img src={logoBlueBig} />
+      <Step ref={step3Ref} data-triggerpoint={1200}>
+        <img alt="step3Img" src={logoBlueBig} />
         <StepIntroduction>
           <p>3</p>
           <h3>XXXXXXXXX</h3>
           <div>
-            OOOOOOOO，OOOOOOO，OOOOOOOOOO，OOOOO，OOO，OOOOOOOOOOOOOOO，OOOOOOO，OOOOOOOOOO，OOOOO，OOO，OOOOOOOOOOOOOOO，OOOOOOO
+            OOOOOOOO，OOOOOOO，OOOOOOOOOO，OOOOO，OOO，O
+            OOOOOOOOOOOOOO，OOOOOOO，OOOOOOOOOO，OOOOO，OOO，OOOOOOOOOOOOOOO，OOOOOOO
           </div>
         </StepIntroduction>
       </Step>

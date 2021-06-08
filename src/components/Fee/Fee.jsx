@@ -108,7 +108,7 @@ const Fee = () => {
   }, []);
   return (
     <Body>
-      <Warp ref={sectionRef} data-triggerpoint={2800}>
+      <Warp ref={sectionRef} data-triggerpoint={3400}>
         <Title>
           OOOOOOOOOO
         </Title>

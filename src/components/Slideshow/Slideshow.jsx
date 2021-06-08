@@ -60,7 +60,6 @@ const SliderItem = styled.div`
 `;
 
 const SliderItemImage = styled.div`
-  width: 586px;
   height: 400px;
   display: flex;
   justify-content: center;

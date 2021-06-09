@@ -18,6 +18,14 @@ const Wrap = styled.div`
   margin: 0px auto;
   display: flex;
   align-items: center;
+
+  @media (max-width: 1200px) {
+    width: 640px;
+  }
+
+  @media (max-width: 740px) {
+    width: 420px;
+  }
 `;
 
 const Menu = styled.ul`
@@ -27,6 +35,20 @@ const Menu = styled.ul`
     font-size: 24px;
     float: left;
     margin-right: 64px;
+  }
+
+  @media (max-width: 1200px) {
+    & > li {
+      font-size: 24px;
+      margin-right: 32px;
+    }
+  }
+
+  @media (max-width: 740px) {
+    & > li {
+      font-size: 14px;
+      margin-right: 16px;
+    }
   }
 `;
 

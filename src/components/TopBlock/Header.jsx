@@ -9,6 +9,10 @@ const Body = styled.div`
   justify-content: space-between;
   padding: 50px 50px 25px 50px;
   box-sizing: border-box;
+
+  @media (max-width: 740px) {
+    padding: 20px;
+  }
 `;
 
 const LogoWrapper = styled.div`

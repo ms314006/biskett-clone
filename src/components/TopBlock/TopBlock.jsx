@@ -13,6 +13,19 @@ const Body = styled.div`
   overflow: hidden;
 `;
 
+const contentFadeIn = keyframes`
+  0% {
+    opacity: 0;
+    left: calc(100vw / 2 - 440px);
+  }
+  
+  100% {
+    opacity: 1;
+    left: calc(100vw / 2 - 540px);
+  }
+
+`;
+
 const ContentWrap = styled.div`
   max-width: 1580px;
   height: 100vh;
@@ -21,6 +34,34 @@ const ContentWrap = styled.div`
   position: absolute;
   top: calc(100vh / 4);
   left: calc(100vw / 2 - 540px);
+  animation: ${contentFadeIn} 1s linear;
+
+  @media (max-width: 1200px) {
+    width: 610px;
+    left: calc(100vw / 2 - 340px);
+    animation: null;
+  }
+
+  @media (max-width: 740px) {
+    width: calc(100vw - 60px);
+    top: 100px;
+    left: 0px;
+  }
+`;
+
+const imageFadeIn = keyframes`
+  0% {
+    opacity: 0;
+    top: -80px;
+    left: 640px;
+  }
+  
+  100% {
+    opacity: 1;
+    top: -100px;
+    left: 740px;
+  }
+
 `;
 
 const Introduction = styled.div`
@@ -43,6 +84,28 @@ const Introduction = styled.div`
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: cover;
+    animation: ${imageFadeIn} 1s linear;
+  }
+
+  @media (max-width: 1200px) {
+    &::after {
+      left: 340px;
+      animation: null;
+    }
+  }
+
+  @media (max-width: 740px) {
+    width: calc(100vw - 60px);
+    & > h1 {
+      font-size: 32px;
+    }
+
+    &::after {
+      width: 330px;
+      height: 500px;
+      top: 260px;
+      left: calc(100vw / 2 - 126px);
+    }
   }
 `;
 
@@ -51,9 +114,14 @@ const IntroductionPassage = styled.div`
   font-size: 18px;
   word-wrap: break-word;
   margin: 30px 0px 50px 0px;
+
+  @media (max-width: 740px) {
+    font-size: 12px;
+    width: 100%;
+  }
 `;
 
-const UseButton = styled.a`
+const UseButton = styled.button`
   color: #ffffff;
   background: #4184f3;
   border: 2px #4184f3 solid;
@@ -70,6 +138,11 @@ const UseButton = styled.a`
     color: #4184f3;
     background: #ffffff;
     transition: background 0.5s;
+  }
+
+  @media (max-width: 740px) {
+    width: 100%;
+    font-size: 16px;
   }
 `;
 
@@ -111,19 +184,18 @@ const TopBlock = () => (
         <h1>XXXXX</h1>
         <IntroductionPassage>
           XXXXXX，XXXXXXXXXXXX，XXXXXXXXX，XXX
-          XXXXXX，XXXXXXXXXXXX，XXXXXXXXX，XXX
-          XXXXXX，XXXXXXXXXXXX，XXXXXXXXX，XXX
+          XXXXXX，XXXXXXXXXXXX，XXXXXXXXX，XXXXXXX
+          XXXXXX，XXXXXXXXXXXX，XXXXXXXXX，XXXXXXXXX
         </IntroductionPassage>
         <UseButton
-          target="_blank"
-          href="https://github.com/ms314006/biskett-clone"
+          onClick={() => { window.open('https://github.com/ms314006/biskett-clone'); }}
         >
           GitHub Repositories!
         </UseButton>
       </Introduction>
     </ContentWrap>
     <SeeMore>
-      <FontAwesomeIcon icon={faAngleDown}/>
+      <FontAwesomeIcon icon={faAngleDown} />
     </SeeMore>
   </Body>
 );

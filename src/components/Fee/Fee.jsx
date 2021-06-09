@@ -14,6 +14,14 @@ const Warp = styled.div`
   padding: 0px 30px;
   position: relative;
   transition: opacity 1s, top 1s;
+
+  @media (max-width: 1200px) {
+    width: 640px;
+  }
+
+  @media (max-width: 740px) {
+    width: 420px;
+  }
 `;
 
 const Title = styled.div`
@@ -27,8 +35,16 @@ const SubTitle = styled.div`
 
 const Fees = styled.div`
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   margin-top: 15px;
   margin-left: -20px;
+
+  @media (max-width: 740px) {
+    & > div:last-child {
+      min-width: 384px;
+    }
+  }
 `;
 
 const FeeItem = styled.div`

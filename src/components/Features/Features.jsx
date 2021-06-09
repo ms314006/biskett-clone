@@ -15,6 +15,14 @@ const Warp = styled.div`
   padding: 0px 30px;
   position: relative;
   transition: opacity 1s, top 1s;
+
+  @media (max-width: 1200px) {
+    width: 640px;
+  }
+
+  @media (max-width: 740px) {
+    width: 420px;
+  }
 `;
 
 const Title = styled.div`
@@ -24,6 +32,7 @@ const Title = styled.div`
 const Features = styled.div`
   display: flex;
   flex-flow: wrap;
+  align-items: center;
   margin-left: -6.731%;
 `;
 
@@ -45,6 +54,10 @@ const Feature = styled.div`
     margin-top: 20px;
     font-size: 12px;
     line-height: 2.167;
+  }
+
+  @media (max-width: 740px) {
+    max-width: 100%;
   }
 `;
 

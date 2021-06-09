@@ -8,6 +8,14 @@ const Body = styled.div`
   margin: -81px auto 0px auto;
   color: #1f3f83;
   padding: 161px 0px 100px 0px;
+
+  @media (max-width: 1200px) {
+    width: 640px;
+  }
+
+  @media (max-width: 740px) {
+    width: 420px;
+  }
 `;
 
 const Title = styled.div`
@@ -25,6 +33,30 @@ const Title = styled.div`
       border-bottom: 3px solid #7df1fd;
     }
   }
+
+  @media (max-width: 740px) {
+    & > span {
+      position: relative;
+  
+      &::after {
+        bottom: 10px;
+      }
+    }
+  }
+`;
+
+const Steps = styled.div`
+  & > div:nth-child(2) {
+    flex-direction: row-reverse;
+  }
+  @media (max-width: 1200px) {
+    & > div {
+      flex-direction: column-reverse;
+    }
+    & > div:nth-child(2) {
+      flex-direction: column-reverse;
+    }
+  }
 `;
 
 const Step = styled.div`
@@ -35,9 +67,18 @@ const Step = styled.div`
   transition: opacity 1s, top 1s;
 
   & > img {
-    height: 227px;
     flex: 1 1 50%;
     max-width: 50%;
+  }
+
+  @media (max-width: 1200px) {
+    margin-top: 40px;
+    margin-bottom: -40px;
+
+    & > img {
+      margin: 10px;
+      max-width: 80%;
+    }
   }
 `;
 
@@ -47,7 +88,7 @@ const StepIntroduction = styled.div`
   height: 190px;
   max-width: 50%;
 
-  & > p:nth-child(1) {
+  & > p {
     font-size: 77px;
     position: absolute;
     top: 0;
@@ -72,6 +113,26 @@ const StepIntroduction = styled.div`
     left: 100px;
     border-left: 4px solid #7df1fd;
   }
+
+  @media (max-width: 1200px) {
+    max-width: 100%;
+  }
+
+  @media (max-width: 740px) {
+    padding-left: 80px;
+
+    &::before {
+      left: 40px;
+    }
+
+    & > p {
+      font-size: 36px;
+    }
+
+    & > h3 {
+      font-size: 20px;
+    }
+  }
 `;
 
 const HowToUse = () => {
@@ -92,39 +153,41 @@ const HowToUse = () => {
         <span>XXX</span>
         OOOOOOO
       </Title>
-      <Step ref={step1Ref} data-triggerpoint={500}>
-        <img alt="step1Img" src={logoBlueBig} />
-        <StepIntroduction>
-          <p>1</p>
-          <h3>XXXXXXXXX</h3>
-          <div>
-            OOOOOOOO，OOOOOOO，OOOOOOOOOO，OOOOO，OOO，
-            OOOOOOOOOOOOOOO，OOOOOOO，OOOOOOOOOO，OOOOO，OOO，OOOOOOOOOOOOOOO，OOOOOOO
-          </div>
-        </StepIntroduction>
-      </Step>
-      <Step ref={step2Ref} data-triggerpoint={850}>
-        <StepIntroduction>
-          <p>2</p>
-          <h3>XXXXXXXXX</h3>
-          <div>
-            OOOOOOOO，OOOOOOO，OOOOOOOOOO，OOOOO，OOO，
-            OOOOOOOOOOOOOOO，OOOOOOO，OOOOOOOOOO，OOOOO，OOO，OOOOOOOOOOOOOOO，OOOOOOO
-          </div>
-        </StepIntroduction>
-        <img alt="step2Img" src={logoBlueBig} />
-      </Step>
-      <Step ref={step3Ref} data-triggerpoint={1200}>
-        <img alt="step3Img" src={logoBlueBig} />
-        <StepIntroduction>
-          <p>3</p>
-          <h3>XXXXXXXXX</h3>
-          <div>
-            OOOOOOOO，OOOOOOO，OOOOOOOOOO，OOOOO，OOO，O
-            OOOOOOOOOOOOOO，OOOOOOO，OOOOOOOOOO，OOOOO，OOO，OOOOOOOOOOOOOOO，OOOOOOO
-          </div>
-        </StepIntroduction>
-      </Step>
+      <Steps>
+        <Step ref={step1Ref} data-triggerpoint={500}>
+          <img alt="step1Img" src={logoBlueBig} />
+          <StepIntroduction>
+            <p>1</p>
+            <h3>XXXXXXXXX</h3>
+            <div>
+              OOOOOOOO，OOOOOOO，OOOOOOOOOO，OOOOO，OOO，
+              OOOOOOOOOOOOOOO，OOOOOOO，OOOOOOOOOO，OOOOO，OOO，OOOOOOOOOOOOOOO，OOOOOOO
+            </div>
+          </StepIntroduction>
+        </Step>
+        <Step ref={step2Ref} data-triggerpoint={850}>
+          <img alt="step2Img" src={logoBlueBig} />
+          <StepIntroduction>
+            <p>2</p>
+            <h3>XXXXXXXXX</h3>
+            <div>
+              OOOOOOOO，OOOOOOO，OOOOOOOOOO，OOOOO，OOO，
+              OOOOOOOOOOOOOOO，OOOOOOO，OOOOOOOOOO，OOOOO，OOO，OOOOOOOOOOOOOOO，OOOOOOO
+            </div>
+          </StepIntroduction>
+        </Step>
+        <Step ref={step3Ref} data-triggerpoint={1200}>
+          <img alt="step3Img" src={logoBlueBig} />
+          <StepIntroduction>
+            <p>3</p>
+            <h3>XXXXXXXXX</h3>
+            <div>
+              OOOOOOOO，OOOOOOO，OOOOOOOOOO，OOOOO，OOO，O
+              OOOOOOOOOOOOOO，OOOOOOO，OOOOOOOOOO，OOOOO，OOO，OOOOOOOOOOOOOOO，OOOOOOO
+            </div>
+          </StepIntroduction>
+        </Step>
+      </Steps>
     </Body>
   );
 };

@@ -20,6 +20,28 @@ const Body = styled.div`
       color: #8ea6d8;
     }
   }
+
+  @media (max-width: 1200px) {
+    & > div :nth-child(2) {
+      & > p {
+        padding-top: 16px;
+        float: right;
+        font-size: 12px;
+        color: #8ea6d8;
+      }
+    }
+  }
+
+  @media (max-width: 740px) {
+    width: 100%;
+    box-sizing: border-box;
+
+    & > div :nth-child(2) {
+      & > p {
+        float: left;
+      }
+    }
+  }
 `;
 
 const Menu = styled.ul`
@@ -35,6 +57,16 @@ const Menu = styled.ul`
       height: 26px;
       border-left: 2px #ffffff solid;
       margin: 0px 20px;
+    }
+  }
+
+  @media (max-width: 740px) {
+    & > li {
+      font-size: 10px;
+
+      &:not(:last-child)::after {
+        margin: 0px 8px;
+      }
     }
   }
 `;

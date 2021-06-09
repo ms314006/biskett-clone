@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import Slider from 'react-slick';
 import superQ1 from '../../assets/img/superQ1.png';
@@ -87,12 +87,26 @@ const HowToUse = () => {
     sliderRef.current.slickPlay();
   }, []);
 
-
   const sectionRef = useRef(null);
   useEffect(() => {
     fadeInObserver.registerObservers([
       sectionRef.current,
     ]);
+  }, []);
+
+  const [sliderCount, setSliderCount] = useState(3);
+  useEffect(() => {
+    const initSliderCount = () => {
+      if (1200 < window.innerWidth) {
+        setSliderCount(3);
+      } else if (740 < window.innerWidth) {
+        setSliderCount(2);
+      } else {
+        setSliderCount(1);
+      }
+    };
+    initSliderCount();
+    window.addEventListener('resize', initSliderCount);
   }, []);
   return (
     <Body ref={sectionRef} data-triggerpoint={2500}>
@@ -113,7 +127,7 @@ const HowToUse = () => {
           autoplay
           autoplaySpeed={5000}
           speed={500}
-          slidesToShow={3}
+          slidesToShow={sliderCount}
           slidesToScroll={1}
           ref={sliderRef}
         >

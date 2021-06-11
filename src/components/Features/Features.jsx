@@ -46,12 +46,16 @@ const Feature = styled.div`
     font-size: 26px;
 
     & > div {
-      width: 54px;
+      width: 70px;
       height: 54px;
-      background: url(${(props) => props.superQ1});
-      background-position: 50% 50%;
-      background-repeat: no-repeat;
-      background-size: cover;
+
+      & > img {
+        max-height: 100%;
+        max-width: 100%;
+        width: auto;
+        height: auto;
+        margin: 0px auto;
+      }
     }
   }
 
@@ -80,45 +84,55 @@ const HowToUse = () => {
           OOOOOOOOOO
         </Title>
         <Features>
-          <Feature superQ1={superQ1}>
+          <Feature>
             <h3>
-              <div />
+              <div>
+                <img alt="feature1" src={superQ1} />
+              </div>
               XXXXXXX，XXX，XXXXXX
             </h3>
             <p>
               OOOOOOOOOOOOOOO，OOOOOOOOO，OOOOOOOOOOOOOOOO，OOOOOOOOO，OOOOOOOOO。OOOOO「OOO」OOOOOOOOO，OOOOOOOOOOO，OOOOOOOOOOOOO。
             </p>
           </Feature>
-          <Feature superQ1={superQ1}>
+          <Feature>
             <h3>
-              <div />
+              <div>
+                <img alt="feature2" src={superQ1} />
+              </div>
               XXXXXXX，XXX，XXXXXX
             </h3>
             <p>
               OOOOOOOOOOOOOOO，OOOOOOOOO，OOOOOOOOOOOOOOOO，OOOOOOOOO，OOOOOOOOO。OOOOO「OOO」OOOOOOOOO，OOOOOOOOOOO，OOOOOOOOOOOOO。
             </p>
           </Feature>
-          <Feature superQ1={superQ1}>
+          <Feature>
             <h3>
-              <div />
+              <div>
+                <img alt="feature3" src={superQ1} />
+              </div>
               XXXXXXX，XXX，XXXXXX
             </h3>
             <p>
               OOOOOOOOOOOOOOO，OOOOOOOOO，OOOOOOOOOOOOOOOO，OOOOOOOOO，OOOOOOOOO。OOOOO「OOO」OOOOOOOOO，OOOOOOOOOOO，OOOOOOOOOOOOO。
             </p>
           </Feature>
-          <Feature superQ1={superQ1}>
+          <Feature>
             <h3>
-              <div />
+              <div>
+                <img alt="feature4" src={superQ1} />
+              </div>
               XXXXXXX，XXX，XXXXXX
             </h3>
             <p>
               OOOOOOOOOOOOOOO，OOOOOOOOO，OOOOOOOOOOOOOOOO，OOOOOOOOO，OOOOOOOOO。OOOOO「OOO」OOOOOOOOO，OOOOOOOOOOO，OOOOOOOOOOOOO。
             </p>
           </Feature>
-          <Feature superQ1={superQ1}>
+          <Feature>
             <h3>
-              <div />
+              <div>
+                <img alt="feature5" src={superQ1} />
+              </div>
               XXXXXXX，XXX，XXXXXX
             </h3>
             <p>

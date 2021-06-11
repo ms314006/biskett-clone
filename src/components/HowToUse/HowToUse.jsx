@@ -66,19 +66,27 @@ const Step = styled.div`
   position: relative;
   transition: opacity 1s, top 1s;
 
-  & > img {
-    flex: 1 1 50%;
-    max-width: 50%;
-  }
-
   @media (max-width: 1200px) {
     margin-top: 40px;
     margin-bottom: -40px;
 
     & > img {
       margin: 10px;
-      max-width: 80%;
+      max-width: 500px;
     }
+  }
+`;
+
+const StepImg = styled.div`
+  width: 500px;
+  height: 200px;
+
+  & > img {
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    margin: 0px auto;
   }
 `;
 
@@ -86,7 +94,7 @@ const StepIntroduction = styled.div`
   position: relative;
   padding-left: 130px;
   height: 190px;
-  max-width: 50%;
+  max-width: 500px;
 
   & > p {
     font-size: 77px;
@@ -115,7 +123,7 @@ const StepIntroduction = styled.div`
   }
 
   @media (max-width: 1200px) {
-    max-width: 100%;
+    max-width: 500px;
   }
 
   @media (max-width: 740px) {
@@ -155,7 +163,9 @@ const HowToUse = () => {
       </Title>
       <Steps>
         <Step ref={step1Ref} data-triggerpoint={500}>
-          <img alt="step1Img" src={logoBlueBig} />
+          <StepImg>
+            <img alt="step1Img" src={logoBlueBig} />
+          </StepImg>
           <StepIntroduction>
             <p>1</p>
             <h3>XXXXXXXXX</h3>
@@ -166,7 +176,9 @@ const HowToUse = () => {
           </StepIntroduction>
         </Step>
         <Step ref={step2Ref} data-triggerpoint={850}>
-          <img alt="step2Img" src={logoBlueBig} />
+          <StepImg>
+            <img alt="step2Img" src={logoBlueBig} />
+          </StepImg>
           <StepIntroduction>
             <p>2</p>
             <h3>XXXXXXXXX</h3>
@@ -177,7 +189,9 @@ const HowToUse = () => {
           </StepIntroduction>
         </Step>
         <Step ref={step3Ref} data-triggerpoint={1200}>
-          <img alt="step3Img" src={logoBlueBig} />
+          <StepImg>
+            <img alt="step3Img" src={logoBlueBig} />
+          </StepImg>
           <StepIntroduction>
             <p>3</p>
             <h3>XXXXXXXXX</h3>

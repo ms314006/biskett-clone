@@ -61,8 +61,14 @@ const SliderItem = styled.div`
 
 const SliderItemImage = styled.div`
   height: 400px;
-  display: flex;
-  justify-content: center;
+
+  & > img {
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    margin: 0px auto;
+  }
 `;
 
 const SliderItemIntroduction = styled.div`

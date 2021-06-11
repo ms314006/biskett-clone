@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import Slider from 'react-slick';
 import superQ1 from '../../assets/img/superQ1.png';
@@ -93,21 +93,6 @@ const HowToUse = () => {
       sectionRef.current,
     ]);
   }, []);
-
-  const [sliderCount, setSliderCount] = useState(3);
-  useEffect(() => {
-    const initSliderCount = () => {
-      if (1200 < window.innerWidth) {
-        setSliderCount(3);
-      } else if (740 < window.innerWidth) {
-        setSliderCount(2);
-      } else {
-        setSliderCount(1);
-      }
-    };
-    initSliderCount();
-    window.addEventListener('resize', initSliderCount);
-  }, []);
   return (
     <Body ref={sectionRef} data-triggerpoint={2500}>
       <Warp>
@@ -127,8 +112,24 @@ const HowToUse = () => {
           autoplay
           autoplaySpeed={5000}
           speed={500}
-          slidesToShow={sliderCount}
+          slidesToShow={3}
           slidesToScroll={1}
+          responsive={[
+            {
+              breakpoint: 1200,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+              },
+            },
+            {
+              breakpoint: 740,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+              },
+            },
+          ]}
           ref={sliderRef}
         >
           <SliderItem>

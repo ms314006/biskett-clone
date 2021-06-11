@@ -45,8 +45,13 @@ const Feature = styled.div`
     display: flex;
     font-size: 26px;
 
-    & > img {
+    & > div {
       width: 54px;
+      height: 54px;
+      background: url(${(props) => props.superQ1});
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      background-size: cover;
     }
   }
 
@@ -75,45 +80,45 @@ const HowToUse = () => {
           OOOOOOOOOO
         </Title>
         <Features>
-          <Feature>
+          <Feature superQ1={superQ1}>
             <h3>
-              <img src={superQ1} />
+              <div />
               XXXXXXX，XXX，XXXXXX
             </h3>
             <p>
               OOOOOOOOOOOOOOO，OOOOOOOOO，OOOOOOOOOOOOOOOO，OOOOOOOOO，OOOOOOOOO。OOOOO「OOO」OOOOOOOOO，OOOOOOOOOOO，OOOOOOOOOOOOO。
             </p>
           </Feature>
-          <Feature>
+          <Feature superQ1={superQ1}>
             <h3>
-              <img src={superQ1} />
+              <div />
               XXXXXXX，XXX，XXXXXX
             </h3>
             <p>
               OOOOOOOOOOOOOOO，OOOOOOOOO，OOOOOOOOOOOOOOOO，OOOOOOOOO，OOOOOOOOO。OOOOO「OOO」OOOOOOOOO，OOOOOOOOOOO，OOOOOOOOOOOOO。
             </p>
           </Feature>
-          <Feature>
+          <Feature superQ1={superQ1}>
             <h3>
-              <img src={superQ1} />
+              <div />
               XXXXXXX，XXX，XXXXXX
             </h3>
             <p>
               OOOOOOOOOOOOOOO，OOOOOOOOO，OOOOOOOOOOOOOOOO，OOOOOOOOO，OOOOOOOOO。OOOOO「OOO」OOOOOOOOO，OOOOOOOOOOO，OOOOOOOOOOOOO。
             </p>
           </Feature>
-          <Feature>
+          <Feature superQ1={superQ1}>
             <h3>
-              <img src={superQ1} />
+              <div />
               XXXXXXX，XXX，XXXXXX
             </h3>
             <p>
               OOOOOOOOOOOOOOO，OOOOOOOOO，OOOOOOOOOOOOOOOO，OOOOOOOOO，OOOOOOOOO。OOOOO「OOO」OOOOOOOOO，OOOOOOOOOOO，OOOOOOOOOOOOO。
             </p>
           </Feature>
-          <Feature>
+          <Feature superQ1={superQ1}>
             <h3>
-              <img src={superQ1} />
+              <div />
               XXXXXXX，XXX，XXXXXX
             </h3>
             <p>
